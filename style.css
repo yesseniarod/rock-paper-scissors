@@ -19,11 +19,35 @@ section {
 }
 
 .score h2 {
-  font-size: 1.7em;
+  font-size: 1.5em;
 }
 
 .score p {
   text-align: center;
   font-size: 1.2em;
   padding-top: 1em;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50vh;
+  color: rgb(224, 224, 224);
+}
+
+.intro button {
+  width: 7rem;
+  height: 3rem;
+  color: rgb(224, 224, 224);
+  border: none;
+  border-radius: 5%;
+  background-color:rgb(45, 117, 96);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.intro h1 {
+  font-size: 2em;
 }
