@@ -35,6 +35,7 @@ section {
   align-items: center;
   height: 50vh;
   color: rgb(224, 224, 224);
+  opacity: 0;
 }
 
 .intro button {
@@ -51,3 +52,23 @@ section {
 .intro h1 {
   font-size: 2em;
 }
+
+.match {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.winner {
+  color: rgb(224, 224, 224);
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* .hands,
+.options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
