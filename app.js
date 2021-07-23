@@ -6,4 +6,10 @@ const startGame = () => {
   const introScreen = document.querySelector('.intro');
   const match = document.querySelector('.match');
 
+  playButton.addEventListener('click', () => {
+    introScreen.classList.add('fadeOut');
+    match.classList.add('fadeIn');
+  });
 }
+
+startGame();
