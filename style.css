@@ -77,3 +77,13 @@ section {
 .player-hand {
   transform: rotateY(180deg);
 }
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
