@@ -38,7 +38,8 @@ section {
   opacity: 0;
 }
 
-.intro button {
+.intro button,
+.match button {
   width: 7rem;
   height: 3rem;
   color: rgb(224, 224, 224);
@@ -66,9 +67,13 @@ section {
   font-size: 2rem;
 }
 
-/* .hands,
+.hands,
 .options {
   display: flex;
   justify-content: space-around;
   align-items: center;
-} */
+}
+
+.player-hand {
+  transform: rotateY(180deg);
+}
