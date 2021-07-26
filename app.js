@@ -3,6 +3,7 @@ let computerScore = 0;
 var options = document.querySelectorAll('.options button');
 var playerHand = document.querySelector('.player-hand');
 var computerHand = document.querySelector('.computer-hand');
+var winner = document.querySelector('.winner');
 
 const startGame = () => {
   const playButton = document.querySelector('.intro button');
