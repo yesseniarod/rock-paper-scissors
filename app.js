@@ -15,4 +15,9 @@ const startGame = () => {
   });
 }
 
+const playMatch = () => {
+  const computerOptions = ['rock', 'paper', 'scissors'];
+  const randomNumber = Math.floor(Math.random() * 3);
+}
+
 startGame();
