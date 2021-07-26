@@ -24,6 +24,9 @@ const playMatch = () => {
       const randomNumber = Math.floor(Math.random() * 3);
       const computerChoice = computerOptions[randomNumber];
 
+      playerHand.src = `./rock-paper-scissor/assets/${option.textContent}.png`;
+      computerHand.src = `./rock-paper-scissor/assets/${computerChoice}.png`;
+
 
       if (option.textContent === computerChoice) {
          winner.textContent = 'It\'s a tie';
