@@ -17,7 +17,14 @@ const startGame = () => {
 
 const playMatch = () => {
   const computerOptions = ['rock', 'paper', 'scissors'];
-  const randomNumber = Math.floor(Math.random() * 3);
+
+  options.forEach(option => {
+    option.addEventListener('click', function () {
+      const randomNumber = Math.floor(Math.random() * 3);
+      const computerChoice = computerOptions[randomNumber];
+    });
+  });
 }
 
 startGame();
+playMatch();
