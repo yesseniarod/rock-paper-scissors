@@ -36,9 +36,11 @@ const playMatch = () => {
        if (option.textContent === 'rock') {
          if (computerChoice === 'scissors') {
            winner.textContent = 'Player Wins';
+           playerScore++;
            return;
          } else {
            winner.textContent = 'Computer Wins';
+           computerScore++;
            return;
          }
        }
@@ -46,9 +48,11 @@ const playMatch = () => {
        if (option.textContent === 'paper') {
          if (computerChoice === 'scissors') {
            winner.textContent = 'Computer Wins';
+           computerScore++;
            return;
          } else {
            winner.textContent = 'Player Wins';
+           playerScore++;
            return;
          }
        }
@@ -56,9 +60,11 @@ const playMatch = () => {
        if (option.textContent === 'scissors') {
          if (computerChoice === 'rock') {
            winner.textContent = 'Computer Wins';
+           computerScore++;
            return;
          } else {
            winner.textContent = 'Player Wins';
+           playerScore++;
            return;
          }
        }
