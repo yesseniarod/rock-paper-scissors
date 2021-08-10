@@ -38,59 +38,69 @@ const playMatch = () => {
       const randomNumber = Math.floor(Math.random() * 3);
       const computerChoice = computerOptions[randomNumber];
 
-      playerHand.src = `./rock-paper-scissor/assets/${option.textContent}.png`;
-      computerHand.src = `./rock-paper-scissor/assets/${computerChoice}.png`;
+
+      function compareHands(playerChoice, computerChoice) {
+        if (playerChoice === computerChoice) {
+          winner.textContent = 'It\'s a tie';
+          return;
+        }
+
+        if (playerChoice === 'rock') {
+          if (computerChoice === 'scissors') {
+            winner.textContent = 'Player Wins';
+            playerScore++;
+            updateScore();
+            return;
+          } else {
+            winner.textContent = 'Computer Wins';
+            computerScore++;
+            updateScore();
+            return;
+          }
+        }
+
+        if (playerChoice === 'paper') {
+          if (computerChoice === 'scissors') {
+            winner.textContent = 'Computer Wins';
+            computerScore++;
+            updateScore();
+            return;
+          } else {
+            winner.textContent = 'Player Wins';
+            playerScore++;
+            updateScore();
+            return;
+          }
+        }
+
+        if (playerChoice === 'scissors') {
+          if (computerChoice === 'rock') {
+            winner.textContent = 'Computer Wins';
+            computerScore++;
+            updateScore();
+            return;
+          } else {
+            winner.textContent = 'Player Wins';
+            playerScore++;
+            updateScore();
+            return;
+          }
+        }
+      }
+
+      setTimeout(() => {
+
+        compareHands(this.textContent, computerChoice);
+
+        playerHand.src = `./rock-paper-scissor/assets/${this.textContent}.png`;
+        computerHand.src = `./rock-paper-scissor/assets/${computerChoice}.png`;
+
+
+      }, 2000);
 
       playerHand.style.animation = "shakePlayer 2s ease";
       computerHand.style.animation = "shakeComputer 2s ease";
 
-
-      if (option.textContent === computerChoice) {
-         winner.textContent = 'It\'s a tie';
-       return;
-       }
-
-       if (option.textContent === 'rock') {
-         if (computerChoice === 'scissors') {
-           winner.textContent = 'Player Wins';
-           playerScore++;
-           updateScore();
-           return;
-         } else {
-           winner.textContent = 'Computer Wins';
-           computerScore++;
-           updateScore();
-           return;
-         }
-       }
-
-       if (option.textContent === 'paper') {
-         if (computerChoice === 'scissors') {
-           winner.textContent = 'Computer Wins';
-           computerScore++;
-           updateScore();
-           return;
-         } else {
-           winner.textContent = 'Player Wins';
-           playerScore++;
-           updateScore();
-           return;
-         }
-       }
-
-       if (option.textContent === 'scissors') {
-         if (computerChoice === 'rock') {
-           winner.textContent = 'Computer Wins';
-           computerScore++;
-           updateScore();
-           return;
-         } else {
-           winner.textContent = 'Player Wins';
-           playerScore++;
-           updateScore();
-           return;
-         }
-       }
     });
 
   });
