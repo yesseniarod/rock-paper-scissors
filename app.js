@@ -4,6 +4,7 @@ var options = document.querySelectorAll('.options button');
 var playerHand = document.querySelector('.player-hand');
 var computerHand = document.querySelector('.computer-hand');
 var winner = document.querySelector('.winner');
+var hands = document.querySelectorAll('.hands img');
 
 const startGame = () => {
   const playButton = document.querySelector('.intro button');
@@ -26,6 +27,12 @@ const updateScore = () => {
 const playMatch = () => {
   const computerOptions = ['rock', 'paper', 'scissors'];
 
+  hands.forEach(hand => {
+    hand.addEventListener('animationend', function () {
+      this.style.animation = '';
+    });
+  });
+
   options.forEach(option => {
     option.addEventListener('click', function () {
       const randomNumber = Math.floor(Math.random() * 3);
@@ -33,6 +40,9 @@ const playMatch = () => {
 
       playerHand.src = `./rock-paper-scissor/assets/${option.textContent}.png`;
       computerHand.src = `./rock-paper-scissor/assets/${computerChoice}.png`;
+
+      playerHand.style.animation = "shakePlayer 2s ease";
+      computerHand.style.animation = "shakeComputer 2s ease";
 
 
       if (option.textContent === computerChoice) {
